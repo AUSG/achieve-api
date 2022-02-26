@@ -1,1 +1,1 @@
-from schemas.item import Item
+from schemas.request import PostCreateRequest, PostUpdateRequest
