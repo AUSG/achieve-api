@@ -16,6 +16,9 @@ python-dotenv = "^0.19.2"
 flake8 = "^4.0.1"
 pytest-cov = "^3.0.0"
 SQLAlchemy = "^1.4.31"
+alembic = "^1.7.6"
+PyMySQL = "^1.0.2"
+mysqlclient = "^2.1.0"
 
 [tool.poetry.dev-dependencies]
 pytest = "^5.2"

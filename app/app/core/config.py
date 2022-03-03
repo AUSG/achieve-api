@@ -17,6 +17,13 @@ class Settings(BaseSettings):
 
     PROJECT_NAME: str
 
+    # DB
+    DB_USER_NAME: str
+    DB_PASSWORD: str
+    DB_HOST: str
+    DB_PORT: int
+    DB_DATABASE_NAME: str
+
     class Config:
         case_sensitive = True
         env_file = str(os.path.join(Path(__file__).parent, f'env/{os.getenv("ENV_STATE", "dev")}.env'))
@@ -26,3 +33,5 @@ class Settings(BaseSettings):
 @lru_cache
 def get_settings() -> Settings:
     return Settings()
+
+settings = get_settings()

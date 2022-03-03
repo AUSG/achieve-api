@@ -1,23 +1,16 @@
-from typing import Any, List
+from typing import Any
 
-import schemas
-from fastapi import APIRouter
+from sqlalchemy.orm import Session
+from fastapi import APIRouter, Depends
 
-from schemas.request import PostCreateRequest
+from api import depends
 
 router = APIRouter()
 
+@router.get("/")
+def get_posts(
+        db: Session = Depends(depends.get_db)
+) -> Any:
+    Session
 
-@router.post("/", response_model=List[schemas.Message])
-def create_post(post: PostCreateRequest) -> Any:
-    """
-    create post
-    :return:
-    """
-    new_post = Message(
-        
-    )
-    # TODO
-    # Create Model Instance
-    item = schemas.Item(title="sample item", description="sample_description")
-    return [item]
+    return "123"
